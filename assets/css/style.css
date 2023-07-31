@@ -149,6 +149,11 @@ body {
 }
 @media (max-width: 768px) {
 
+  .col-md-6 img{
+    flex: 0 auto 0;
+    width: 100%;
+  }
+
   .fixed-buttom img {
     width: 100px;
     height: 100px;
