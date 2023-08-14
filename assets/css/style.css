@@ -21,6 +21,7 @@ h2 {
   font-family: "Montserrat";
   font-size: 40px;
   color: green;
+  margin-bottom: 10px;
 }
 
 .nav-item h3 {
@@ -145,6 +146,7 @@ h2 {
   color: #fff;
   padding: 10px 20px;
   border: none;
+  margin-top: 100px;
   border-radius: 5px;
   text-decoration: none;
   margin-right: 10px;
@@ -285,6 +287,19 @@ p {
 .text {
   grid-column: 1/span 2;
   font-size: 20px;
+}
+
+.animate__animated .animate__backInLeft {
+  --animate-duration: 3s;
+}
+.animate__animated .animate__backInRight {
+  --animate-duration: 6s;
+}
+.animate__animated .animate__backInUp {
+  --animate-duration: 8s;
+}
+.animate__animated .animate__flipInY {
+  --animate-duration: 4s;
 }
 
 .form {
