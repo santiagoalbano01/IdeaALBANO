@@ -289,13 +289,19 @@ p {
 .image2 {
 	background-image: url('../img/info2.png');
 }
+.image3 {
+	background-image: url('../img/sa.png');
+}
+.image4 {
+	background-image: url('../img/hola-saludo.gif');
+}
 .text {
 	grid-column: 1 / span 2;
 	font-size: 20px;
 }
 .form {
 	width: 570px;
-	height: 550px;
+	height: 620px;
 	box-shadow: 0px 0px 5px rgb(40, 255, 0);
 	background: #ffffff;
 	border-color: $border-color_2;
@@ -311,6 +317,23 @@ p {
 	font-size: 20px;
 	text-align: start;
 	list-style-position: inside;
+	form {
+		display: flex;
+		flex-direction: column;
+	
+		label {
+		  margin-bottom: 5px;
+		}
+	
+		input,
+		textarea {
+		  margin-bottom: 15px;
+		}
+	
+		button {
+		  margin-top: 10px;
+		}
+	}
 }
 @media (max-width: 575px) {
 	iframe {
@@ -352,6 +375,24 @@ p {
 			align-items: center;
 		}
 	}
+	.form {
+		left: 15px;
+		padding: 10px 20px;
+		width: 90%;
+		height: 50%;
+		margin: 5px;
+	}
+	label {
+		width: 55%;
+		margin: 5px;
+	}
+  
+	input,
+	textarea {
+		padding: 10px 20px;
+		width: 95%;
+		margin: 5px;
+	}
 	.fixed-buttom {
 		img {
 			width: 100px;
@@ -361,7 +402,7 @@ p {
 	}
 	.boton3 {
 		padding: 10px 20px;
-		width: 35%;
+		width: 95%;
 		margin: 5px;
 	}
 	#imagen-parallax {
@@ -394,6 +435,14 @@ p {
 	.image1 {
 		grid-column: 2/ span 1;
 	}
+	.image3 {
+		grid-column: 2/ span 1;
+	}
+}
+@media (max-width: 1700px) {
+	.form {
+		margin-top: 400px;
+	}
 }
 @media (max-width: 455px) {
 	.section-grid {
@@ -407,6 +456,14 @@ p {
 		margin-bottom: 25px;
 	}
 	.image2 {
+		margin: 0 auto;
+	}
+	.image3 {
+		padding-top: 15px;
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
+	.image4 {
 		margin: 0 auto;
 	}
 }
