@@ -25,10 +25,11 @@ h2 {
 }
 
 .nav-item h3 {
+  font-family: "Lato";
+  font-size: 25px;
+  color: green;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 25px;
-  font-family: "Lato";
   border-color: green;
   transition: color 0.2s ease-in-out;
 }
@@ -91,19 +92,19 @@ h2 {
   object-fit: cover;
 }
 
-.boton {
+.boton, .boton2, .boton3 {
   display: inline-block;
   border-color: green;
   color: #fff;
   padding: 10px 20px;
   border: none;
+  margin-top: 40px;
   border-radius: 5px;
   text-decoration: none;
   margin-right: 10px;
   transition: background-color 0.5s ease-in-out;
-  margin-top: 15px;
 }
-.boton a {
+.boton a, .boton2 a, .boton3 a {
   text-align: center;
   text-decoration: none;
   color: green;
@@ -112,57 +113,12 @@ h2 {
   padding-bottom: 50px;
   padding-top: 50px;
 }
-.boton:hover {
-  background-color: lightgreen;
-}
-
-.boton2 {
-  display: inline-block;
-  border-color: green;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-right: 10px;
-  transition: background-color 0.5s ease-in-out;
-}
-.boton2 a {
-  text-align: center;
-  text-decoration: none;
-  color: green;
-  font-family: "Lato";
-  font-size: 30px;
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-.boton2:hover {
+.boton:hover, .boton2:hover, .boton3:hover {
   background-color: lightgreen;
 }
 
 .boton3 {
-  display: inline-block;
-  border-color: green;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
   margin-top: 100px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-right: 10px;
-  transition: background-color 0.5s ease-in-out;
-}
-.boton3 a {
-  text-align: center;
-  text-decoration: none;
-  color: green;
-  font-family: "Lato";
-  font-size: 30px;
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-.boton3:hover {
-  background-color: lightgreen;
 }
 
 .fixed-buttom img {

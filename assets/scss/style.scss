@@ -19,6 +19,12 @@ $background-color_4: transparent;
 $border-color_1: green;
 $border-color_2: #ffffff;
 
+@mixin font($family, $size, $color) {
+	font-family: $family;
+	font-size: $size;
+	color: $color;
+}
+  
 
 body {
 	font-family: $font-family_1;
@@ -33,23 +39,18 @@ body {
 }
 .titulo {
 	h1 {
-		font-family: $font-family_4;
-		font-size: 40px;
-		color: $color_1;
+		@include font($font-family_4, 40px, $color_1);
 	}
 }
 h2 {
-	font-family: $font-family_4;
-	font-size: 40px;
-	color: $color_1;
+	@include font($font-family_4, 40px, $color_1);
 	margin-bottom: 10px;
 }
 .nav-item {
 	h3 {
+		@include font($font-family_5, 25px, $color_1);
 		padding-top: 10px;
 		padding-bottom: 10px;
-		font-size: 25px;
-		font-family: $font-family_5;
 		border-color: $border-color_1;
 		transition: color 0.2s ease-in-out;
 		&:hover {
@@ -108,76 +109,36 @@ h2 {
 		object-fit: cover;
 	}
 }
-.boton {
+%button-style {
 	display: inline-block;
 	border-color: $border-color_1;
 	color: $color_3;
 	padding: 10px 20px;
 	border: none;
-	border-radius: 5px;
-	text-decoration: none;
-	margin-right: 10px;
-	transition: background-color 0.5s ease-in-out;
-	margin-top: 15px;
-	a {
-		text-align: center;
-		text-decoration: none;
-		color: $color_1;
-		font-family: $font-family_5;
-		font-size: 30px;
-		padding-bottom: 50px;
-		padding-top: 50px;
-	}
-	&:hover {
-		background-color: $background-color_3;
-	}
-}
-.boton2 {
-	display: inline-block;
-	border-color: $border-color_1;
-	color: $color_3;
-	padding: 10px 20px;
-	border: none;
+	margin-top: 40px;
 	border-radius: 5px;
 	text-decoration: none;
 	margin-right: 10px;
 	transition: background-color 0.5s ease-in-out;
 	a {
-		text-align: center;
-		text-decoration: none;
-		color: $color_1;
-		font-family: $font-family_5;
-		font-size: 30px;
-		padding-bottom: 50px;
-		padding-top: 50px;
+	  text-align: center;
+	  text-decoration: none;
+	  color: $color_1;
+	  font-family: $font-family_5;
+	  font-size: 30px;
+	  padding-bottom: 50px;
+	  padding-top: 50px;
 	}
 	&:hover {
-		background-color: $background-color_3;
+	  background-color: $background-color_3;
 	}
+  }
+
+.boton, .boton2, .boton3 {
+	@extend %button-style;
 }
 .boton3 {
-	display: inline-block;
-	border-color: $border-color_1;
-	color: $color_3;
-	padding: 10px 20px;
-	border: none;
 	margin-top: 100px;
-	border-radius: 5px;
-	text-decoration: none;
-	margin-right: 10px;
-	transition: background-color 0.5s ease-in-out;
-	a {
-		text-align: center;
-		text-decoration: none;
-		color: $color_1;
-		font-family: $font-family_5;
-		font-size: 30px;
-		padding-bottom: 50px;
-		padding-top: 50px;
-	}
-	&:hover {
-		background-color: $background-color_3;
-	}
 }
 .fixed-buttom {
 	img {
