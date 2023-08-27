@@ -1,0 +1,5 @@
+# Archivos y carpetas específicos de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
