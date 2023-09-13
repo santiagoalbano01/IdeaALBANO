@@ -14,7 +14,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!--Link ShortCut-->
   <link rel="shortcut icon" href="../assets/img/logo.mundo.png" type="image/jpg">
-  <!--Link Css-->
+  <!--Link Css y Js-->
   <link rel="stylesheet" href="../assets/css/style.css">
   <!--Links Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,18 +63,21 @@
         <img src="../assets/img/logo.mundo.frase.png" alt="imagen-mundo-verde-green-san-juan-cambiando-el-futuro" class="img-fluid" width="438" height="410">
         </div>
         <div class="form">
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
+            <form id="contactForm">
+                <label for="nombre">*Nombre:</label>
+                <input type="text" name="nombre" id="nombres">
+
+                <label for="nombre">*Apellido:</label>
+                <input type="text" name="nombre" id="apellidos">
                 
-                <label for="email">Email:</label>
+                <label for="email">*Email:</label>
                 <input type="email" name="email" id="email">
         
-                <label for="celu">Teléfono:</label>
-                <input type="tel" name="celu" id="celu">
+                <label for="celu">*Teléfono:</label>
+                <input type="tel" name="celu" id="telefono">
         
-                <label for="comentario">Opinón:</label>
-                <textarea name="comentario" id="comentario" cols="30" rows="7"></textarea>
+                <label for="comentario">Mensaje:</label>
+                <textarea name="comentario" id="mensaje" cols="30" rows="7"></textarea>
 
                 <button class="boton3">Enviar</button>
             </form>
@@ -120,5 +123,6 @@
             </section>    
           </footer>
     </main>
+    <script src="../scripts/main.js"></script>
 </body>
 </html>

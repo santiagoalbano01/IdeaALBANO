@@ -406,6 +406,20 @@ p {
     padding-top: 45px;
     padding-bottom: 45px;
   }
+  section.container.text-center {
+    font-size: 14px;
+  }
+  #carouselExampleIndicators .carousel-indicators {
+    margin-bottom: 10px;
+  }
+  #carouselExampleIndicators .carousel-control-prev,
+  #carouselExampleIndicators .carousel-control-next {
+    font-size: 14px;
+  }
+  #carouselExampleIndicators .carousel-inner .carousel-item img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 1071px) {
   .text {
