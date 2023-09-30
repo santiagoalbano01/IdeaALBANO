@@ -26,9 +26,74 @@ let telefono;
 let email = "";
 let registro = "";
 
-//DEFINO ARRAYS
+//DEFINO ARRAYS Y OBJETOS
 
 const registrosDeOpiniones = [];
+
+registrosDeOpiniones.push({
+    nombre: "Santiago",
+    apellido: "Albano",
+    email: "santiagoalbano09@gmail.com",
+    telefono: "2645421275",
+    opinion: "Epic trabajo."
+});
+
+registrosDeOpiniones.push({
+    nombre: "Juan",
+    apellido: "Perez",
+    email: "juan@example.com",
+    telefono: "351361364",
+    opinion: "Excelente servicio."
+});
+
+registrosDeOpiniones.push({
+    nombre: "Ana",
+    apellido: "Gomez",
+    email: "ana@example.com",
+    telefono: "35435345234",
+    opinion: "Me encanta GREEN SJ."
+});
+
+registrosDeOpiniones.push({
+    nombre: "Carlos",
+    apellido: "Lopez",
+    email: "carlos@example.com",
+    telefono: "2352356334",
+    opinion: "Buen trabajo."
+});
+
+registrosDeOpiniones.push({
+    nombre: "Tomas",
+    apellido: "Albano",
+    email: "tomasalbano01@gmail.com",
+    telefono: "13414545",
+    opinion: "Epic trabajo."
+});
+
+registrosDeOpiniones.push({
+    nombre: "Juancito",
+    apellido: "Ortiz",
+    email: "juan@example.com",
+    telefono: "1321341414",
+    opinion: "Excelente servicio."
+});
+
+registrosDeOpiniones.push({
+    nombre: "Papu",
+    apellido: "Gomez",
+    email: "papug@example.com",
+    telefono: "9876543210",
+    opinion: "Me encanta GREEN SJ."
+});
+
+registrosDeOpiniones.push({
+    nombre: "German",
+    apellido: "Lopez",
+    email: "german@example.com",
+    telefono: "2836213813",
+    opinion: "Marcelo Furlong te amo"
+});
+
 
 //BODY
 alert("Bienvenidos a la sección contacto de GREEN Sj.");
@@ -48,19 +113,19 @@ while (continuar) {
             do {
                 email = prompt("Introduce tu correo electrónico:");
                 telefono = parseFloat(prompt("Y por último, permítenos tu número de teléfono:"));
-        
+
                 if (email === "" || isNaN(telefono)) {
                     alert("Debes ingresar tanto el correo electrónico como el número de teléfono.");
                 }
-        
+
             } while (email === "" || isNaN(telefono));
-        
+
             alert("¡Gracias por contactarte " + obtenerNombreCompleto(apellido, nombre) + " con GREEN SJ! En breve, un agente se comunicará contigo.");
             console.log(obtenerServicio(apellido, nombre, email, telefono));
             alert("Ahora serás redirigido a la página de Inicio de GREEN SJ.");
             window.location.href = "../index.html";
             continuar = false;
-        
+
         } else if (ingreso.toUpperCase() === "OPINION") {
             do {
                 opinion = prompt("Deja tu opinión:");
@@ -93,7 +158,25 @@ while (continuar) {
             window.location.href = "../index.html";
             continuar = false;
         } else if (ingreso.toUpperCase() === "ADMIN") {
-            
+            ingreso2 = prompt("Ingresaste como administrador.Si deseas ver todas las opiniones registradas escribe TODOS. Si deseas ver alguna opinion de un usuario en concreto escribe BUSCAR. De lo contrario escribe SALIR.")
+            if (ingreso2.toUpperCase() === "TODOS") {
+                console.log("Estas son todas las opiniones registradas:");
+                for (let i = 0; i < registrosDeOpiniones.length; i++) {
+                    console.log("Nombre: " + registrosDeOpiniones[i].nombre + "\nOpinión: " + registrosDeOpiniones[i].opinion);
+                }
+            }
+            else if (ingreso2.toUpperCase() === "BUSCAR") {
+                let nombreBuscado = prompt("Cuál es el nombre del Usuario?");
+                let opinionEncontrada = registrosDeOpiniones.find(registrosDeOpiniones => registrosDeOpiniones.nombre.toUpperCase() === nombreBuscado.toUpperCase());
+
+                if (opinionEncontrada) {
+                    alert("Opinión encontrada para " + nombreBuscado + ": " + opinionEncontrada.opinion);
+                }
+                else {
+                    alert("No se encontró ninguna opinión para " + nombreBuscado + ".");
+                }
+            }
+
         }
     }
 }
