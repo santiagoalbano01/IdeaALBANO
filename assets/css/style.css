@@ -92,7 +92,9 @@ h2 {
   object-fit: cover;
 }
 
-.boton, .boton2, .boton3 {
+.boton,
+.boton2,
+.boton3 {
   display: inline-block;
   border-color: green;
   color: #fff;
@@ -107,7 +109,9 @@ h2 {
   -webkit-transition: 0.5s, color 0.1s;
   -moz-transition: 0.5s, color 0.1s;
 }
-.boton a, .boton2 a, .boton3 a {
+.boton a,
+.boton2 a,
+.boton3 a {
   text-align: center;
   text-decoration: none;
   color: green;
@@ -116,7 +120,9 @@ h2 {
   padding-bottom: 50px;
   padding-top: 50px;
 }
-.boton:hover, .boton2:hover, .boton3:hover {
+.boton:hover,
+.boton2:hover,
+.boton3:hover {
   background-color: lightgreen;
   box-shadow: 0 8px 8px 0 #bebbbc, 0 8px 8px 0 #adadab;
   transform: translate(0px, 5px);
@@ -210,7 +216,7 @@ h2.encabezado2 {
 
 p {
   text-align: center;
-  color: white;
+  color: green;
   padding-top: 45px;
   padding-bottom: 45px;
   padding-left: 45px;

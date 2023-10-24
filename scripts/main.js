@@ -4,7 +4,26 @@ const obtenerNombreCompleto = (apellidos, nombres) => {
     return apellidos.toUpperCase() + ", " + nombres;
 }
 
-const obtenerRegistroCompleto = (apellido, nombre, opinion) => {
+function recuperarRegistrosDesdeSessionStorage(clave) {
+    if (typeof Storage !== "undefined") {
+        const registrosGuardados = sessionStorage.getItem(clave);
+        if (registrosGuardados) {
+            return JSON.parse(registrosGuardados);
+        }
+    } else {
+        return [];
+    }
+
+}
+
+function guardarEnSessionStorage(clave, valor) {
+    if (typeof Storage !== "undefined") {
+        sessionStorage.setItem(clave, JSON.stringify(valor));
+    } else {
+        return [];
+    }
+}
+/*const obtenerRegistroCompleto = (apellido, nombre, opinion) => {
     return "El usuario: " + apellido + ", " + nombre + " dejó la siguiente opinión: " + opinion;
 }
 
@@ -14,91 +33,59 @@ const obtenerRegistroAnonimo = (opinion) => {
 
 const obtenerServicio = (apellido, nombre, email, telefono) => {
     return "El usuario: " + apellido + ", " + nombre + " con email: " + email + " y telefono: " + telefono + " necesita servicio al cliente.";
-}
+}*/
 
-//DEFINO VARIABLES
 
-let continuar = true;
-let nombre = "";
-let apellido = "";
-let opinion = "";
-let telefono;
-let email = "";
-let registro = "";
-
-//DEFINO ARRAYS Y OBJETOS
+//DEFINO ARRAY
 
 const registrosDeOpiniones = [];
 
-registrosDeOpiniones.push({
-    nombre: "Santiago",
-    apellido: "Albano",
-    email: "santiagoalbano09@gmail.com",
-    telefono: "2645421275",
-    opinion: "Epic trabajo."
-});
-
-registrosDeOpiniones.push({
-    nombre: "Juan",
-    apellido: "Perez",
-    email: "juan@example.com",
-    telefono: "351361364",
-    opinion: "Excelente servicio."
-});
-
-registrosDeOpiniones.push({
-    nombre: "Ana",
-    apellido: "Gomez",
-    email: "ana@example.com",
-    telefono: "35435345234",
-    opinion: "Me encanta GREEN SJ."
-});
-
-registrosDeOpiniones.push({
-    nombre: "Carlos",
-    apellido: "Lopez",
-    email: "carlos@example.com",
-    telefono: "2352356334",
-    opinion: "Buen trabajo."
-});
-
-registrosDeOpiniones.push({
-    nombre: "Tomas",
-    apellido: "Albano",
-    email: "tomasalbano01@gmail.com",
-    telefono: "13414545",
-    opinion: "Epic trabajo."
-});
-
-registrosDeOpiniones.push({
-    nombre: "Juancito",
-    apellido: "Ortiz",
-    email: "juan@example.com",
-    telefono: "1321341414",
-    opinion: "Excelente servicio."
-});
-
-registrosDeOpiniones.push({
-    nombre: "Papu",
-    apellido: "Gomez",
-    email: "papug@example.com",
-    telefono: "9876543210",
-    opinion: "Me encanta GREEN SJ."
-});
-
-registrosDeOpiniones.push({
-    nombre: "German",
-    apellido: "Lopez",
-    email: "german@example.com",
-    telefono: "2836213813",
-    opinion: "Marcelo Furlong te amo"
-});
-
 
 //BODY
-alert("Bienvenidos a la sección contacto de GREEN Sj.");
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+    const submitButton = document.querySelector(".submit");
+    const mensajeUsuario = document.getElementById("mensajeUsuario");
+    const mensajeConsola = document.getElementById("mensajeConsola");
 
-while (continuar) {
+    submitButton.addEventListener("click", function () {
+        const nombreInput = document.getElementById("nombre");
+        const apellidoInput = document.getElementById("apellido");
+        const emailInput = document.getElementById("email");
+        const telefonoInput = document.getElementById("telefono");
+        const mensajeInput = document.getElementById("mensaje");
+
+        const nombre = nombreInput.value;
+        const apellido = apellidoInput.value;
+        const email = emailInput.value;
+        const telefono = telefonoInput.value;
+        const mensaje = mensajeInput.value;
+
+        if (nombre === "" || apellido === "" || email === "" || telefono === "") {
+            mensajeUsuario.textContent = "Por favor, complete todos los campos obligatorios.";
+        } else {
+            mensajeUsuario.textContent = "Gracias por contactarte " + obtenerNombreCompleto(apellido, nombre) + ". En breve un agente se comunicara contigo.";
+
+            const registroDeOpinion = {
+                nombre: obtenerNombreCompleto(apellido, nombre),
+                opinion: mensaje,
+                email: email,
+                telefono: telefono,
+            };
+            registrosDeOpiniones.push(registroDeOpinion);
+
+            guardarEnSessionStorage("registrosDeOpiniones", registrosDeOpiniones);
+
+            const registrosRecuperados = recuperarRegistrosDesdeSessionStorage("registrosDeOpiniones");
+
+            registrosRecuperados.forEach((registro, index) => {
+                mensajeConsola.textContent = `Registro #${index + 1}: Nombre: ${registro.nombre}, Email: ${registro.email}, Teléfono: ${registro.telefono}, Opinión: ${registro.opinion}`;
+            });
+
+        }
+    });
+});
+/*while (continuar) {
     nombre = prompt("¿Como es tu nombre?");
     apellido = prompt("¿Como es tu apellido?");
 
@@ -179,4 +166,4 @@ while (continuar) {
 
         }
     }
-}
+}*/
