@@ -85,6 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+//PROGRAMACION ANTERIOR
+
+
 /*while (continuar) {
     nombre = prompt("¿Como es tu nombre?");
     apellido = prompt("¿Como es tu apellido?");
