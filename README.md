@@ -21,7 +21,7 @@ Green SJ es una aplicación web diseñada para ayudarte a contribuir al cuidado 
 
 ## Contacto
 
-Si deseas ponerse en contacto con nosotros o tienes alguna pregunta, no dudes en utilizar nuestra sección de contacto en el sitio web. Simplemente introduce tu nombre y número de teléfono, y un agente de servicio al cliente se pondrá en contacto contigo lo antes posible para ayudarte con cualquier consulta o asistencia que necesites.
+Si deseas ponerse en contacto con nosotros o tienes alguna pregunta, no dudes en utilizar nuestra sección de contacto en el sitio web. Simplemente introduce tu nombre, número de teléfono, déjannos un mensaje y un agente de servicio al cliente se pondrá en contacto contigo lo antes posible para ayudarte con cualquier consulta o asistencia que necesites.
 
 ## Contribuciones
 
